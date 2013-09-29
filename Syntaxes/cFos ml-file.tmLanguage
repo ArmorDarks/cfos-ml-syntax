@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>cfos.txt</string>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~P</string>
+	<key>name</key>
+	<string>cFos ml-file</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.item.text</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(•).*$\n?</string>
+			<key>name</key>
+			<string>meta.bullet-point.strong.text</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.item.text</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(·).*$\n?</string>
+			<key>name</key>
+			<string>meta.bullet-point.light.text</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.item.text</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(\*).*$\n?</string>
+			<key>name</key>
+			<string>meta.bullet-point.star.text</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^([ \t]*)(?=\S)</string>
+			<key>contentName</key>
+			<string>cfos.meta.paragraph.text</string>
+			<key>end</key>
+			<string>^(?!\1(?=\S))</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+						( (https?|s?ftp|ftps|file|smb|afp|nfs|(x-)?man|gopher|txmt)://|mailto:)
+						[-:@a-zA-Z0-9_.,~%+/?=&amp;#]+(?&lt;![.,?:])
+					</string>
+					<key>name</key>
+					<string>markup.underline.link.text</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&#060;[^&#062;]*$|&#060;[^&#062;]*?&#060;.*?&#062;|^[^&#060;]*[^\s|\-]&#062;|&#060;.*?&#062;[^&#060;]*[^\s|\-]&#062;|&#060;(\s.*?\s?|\s?.*?\s|\/+\s.*?)&#062;|&amp;[^;]*[;]$|(&amp;(\s.*?\s?|\s?.*?\s);)|^[^/].*".*((?!\\"|\\\\)(."|.\\[^\\"n]).*(";?|\\";?)|([^"];|[^";\s]))[\s]*$|^\w.*?[^=]\s"[\S][^\s].*;?[/s]*$|^[ \t]+[^"][\w\[\]].+</string>
+					<key>name</key>
+					<string>invalid</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&#060;.*?&#062;|&#060;\/.*&#062;</string>
+					<key>name</key>
+					<string>entity.name.tag cfos</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&amp;[\w#]+;</string>
+					<key>name</key>
+					<string>constant.character.entity.html</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>^\#.*</string>
+					<key>name</key>
+					<!-- language indefier -->
+					<string>keyword.operator</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?!\/.*\"\;)(\/.*)</string>
+					<key>name</key>
+					<string>comment</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<!-- absense of some escapings -->
+					<string>^\s[^"/]*[^"]$|^\w[^\s]*([\s]+[\w\[\]].|[\s]*".*|[\s]*=[\s]*\w.*|[\s]=".*)$</string>
+					<key>name</key>
+					<string>invalid</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<!-- absense of some escapings -->
+					<string>\s?"\s?$</string>
+					<key>name</key>
+					<string>invalid cfos.dimm</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>^.*?\s</string>
+					<key>name</key>
+					<string>cfos.markup.keyword.text</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>=\s</string>
+					<key>name</key>
+					<string>cfos.markup.assigment.text</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\%\w|\[\%.*?\%\]</string>
+					<key>name</key>
+					<string>cfos.markup.variable.text</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\n</string>
+					<key>name</key>
+					<!-- break -->
+					<string>comment</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\\"|\\\\</string>
+					<key>name</key>
+					<string>cfos.markup.escape.text</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\"\;|\s\"|\"|\\</string>
+					<key>name</key>
+					<string>cfos.markup.quote.text</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.plain</string>
+	<key>uuid</key>
+	<string>4ED61167-FCB9-4D6E-8FAD-4B748FB46028</string>
+</dict>
+</plist>
