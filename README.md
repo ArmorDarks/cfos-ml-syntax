@@ -1,7 +1,7 @@
 Syntax highlighting for cFos ml-files
 =====================================
 
-![alt text](http://www.xland.com.ua/github/cfos-ml-syntax_preview--v4.png "Syntax highlighting for cFos ml-files preview")
+![alt text](http://www.xland.com.ua/github/cfos-ml-syntax_preview--v5.png "Syntax highlighting for cFos ml-files preview")
 
 *Note: latter it will be added as Package for Package Control in Sublime Text*
   
