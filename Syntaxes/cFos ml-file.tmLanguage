@@ -58,7 +58,7 @@
 			<key>begin</key>
 			<string>^([ \t]*)(?=\S)</string>
 			<key>contentName</key>
-			<string>cfos.meta.paragraph.text</string>
+			<string>meta.paragraph.text cfos</string>
 			<key>end</key>
 			<string>^(?!\1(?=\S))</string>
 			<key>patterns</key>
@@ -115,25 +115,25 @@
 					<!-- absense of some escapings -->
 					<string>\s?"\s?$</string>
 					<key>name</key>
-					<string>invalid cfos.dimm</string>
+					<string>invalid cfos</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>^.*?\s</string>
 					<key>name</key>
-					<string>cfos.markup.keyword.text</string>
+					<string>keyword cfos</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>=\s</string>
 					<key>name</key>
-					<string>cfos.markup.assigment.text</string>
+					<string>keyword.operator cfos</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\%\w|\[\%.*?\%\]</string>
 					<key>name</key>
-					<string>cfos.markup.variable.text</string>
+					<string>variable cfos</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -146,13 +146,13 @@
 					<key>match</key>
 					<string>\\\"|\\\\</string>
 					<key>name</key>
-					<string>cfos.markup.escape.text</string>
+					<string>entity cfos</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\"\;|\s\"|\"|\\</string>
 					<key>name</key>
-					<string>cfos.markup.quote.text</string>
+					<string>string cfos</string>
 				</dict>
 			</array>
 		</dict>
