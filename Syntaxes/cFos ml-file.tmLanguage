@@ -65,16 +65,21 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)
-						( (https?|s?ftp|ftps|file|smb|afp|nfs|(x-)?man|gopher|txmt)://|mailto:)
-						[-:@a-zA-Z0-9_.,~%+/?=&amp;#]+(?&lt;![.,?:])
-					</string>
+					<string>&#060;[^&#062;]*$|&#060;[^&#062;]*?&#060;.*?&#062;|^[^&#060;]*[^\s|\-]&#062;|&#060;.*?&#062;[^&#060;]*[^\s|\-]&#062;|&#060;(\s.*?\s?|\s?.*?\s|\/+\s.*?)&#062;|&amp;[^;]*[;]$|(&amp;(\s.*?\s?|\s?.*?\s);)|^[^/].*".*((?!\\"|\\\\)(."|.\\[^\\"n]).*(";?|\\";?)|([^"];|[^";\s]))[\s]*$|^\w.*?[^=]\s"[\S][^\s].*;?[/s]*$|^[ \t]+[^"][\w\[\]].+</string>
 					<key>name</key>
-					<string>markup.underline.link.text</string>
+					<string>invalid</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>&#060;[^&#062;]*$|&#060;[^&#062;]*?&#060;.*?&#062;|^[^&#060;]*[^\s|\-]&#062;|&#060;.*?&#062;[^&#060;]*[^\s|\-]&#062;|&#060;(\s.*?\s?|\s?.*?\s|\/+\s.*?)&#062;|&amp;[^;]*[;]$|(&amp;(\s.*?\s?|\s?.*?\s);)|^[^/].*".*((?!\\"|\\\\)(."|.\\[^\\"n]).*(";?|\\";?)|([^"];|[^";\s]))[\s]*$|^\w.*?[^=]\s"[\S][^\s].*;?[/s]*$|^[ \t]+[^"][\w\[\]].+</string>
+					<!-- detects wrong endings of strings like /"; -->
+					<string>^.*\\\"\;$</string>
+					<key>name</key>
+					<string>invalid</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<!-- detects wrong endings of strings like /" -->
+					<string>^.*\\\"$</string>
 					<key>name</key>
 					<string>invalid</string>
 				</dict>
